@@ -1,4 +1,4 @@
-import { CircularProgress } from "@mui/material";
+import { CircularProgress, Container, Typography } from "@mui/material";
 import Products from "../components/Products/Products";
 import { useGetProductsQuery } from "../services/products";
 
@@ -6,10 +6,12 @@ const Landing = () => {
   const { isLoading, data } = useGetProductsQuery("");
 
   return (
-    <div>
-      <h1>Landing</h1>
+    <Container>
+      <Typography variant="h2" style={{ textTransform: "uppercase" }}>
+        The latest products
+      </Typography>
       {isLoading ? <CircularProgress /> : <Products products={data} />}
-    </div>
+    </Container>
   );
 };
 
