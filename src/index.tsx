@@ -1,4 +1,3 @@
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
@@ -7,13 +6,19 @@ import reportWebVitals from "./reportWebVitals";
 import Landing from "./views/Landing";
 import { Provider } from "react-redux";
 import { store } from "./store";
+import Header from "./components/Header/Header";
+
+import ProductsView from "./views/Products";
 
 const router = createBrowserRouter([
+  { path: "/products", element: <ProductsView /> },
   {
     path: "/",
     element: <Landing />,
   },
 ]);
+
+const isLanding = window.location.pathname === "/";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -21,6 +26,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
+      {!isLanding && <Header />}
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>

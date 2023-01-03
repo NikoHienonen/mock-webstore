@@ -1,17 +1,15 @@
-import { CircularProgress, Container, Typography } from "@mui/material";
-import Products from "../components/Products/Products";
-import { useGetProductsQuery } from "../services/products";
+import { Button, Container, Grid, Typography } from "@mui/material";
+import Header from "../components/Header/Header";
 
 const Landing = () => {
-  const { isLoading, data } = useGetProductsQuery("");
-
   return (
-    <Container>
-      <Typography variant="h2" style={{ textTransform: "uppercase" }}>
-        The latest products
+    <Grid container sx={{ height: "100vh" }}>
+      <Header />
+      <Typography variant="h5" align="center" sx={{}}>
+        We have fake products!
       </Typography>
-      {isLoading ? <CircularProgress /> : <Products products={data} />}
-    </Container>
+      <Button>Check them out!</Button>
+    </Grid>
   );
 };
 

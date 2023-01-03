@@ -14,11 +14,7 @@ const ProductComponent = ({ product }: ProductProps) => {
           <Typography variant="h5" gutterBottom>
             {title}
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{ textOverflow: "ellipsis" }}
-            gutterBottom
-          >
+          <Typography variant="body1" gutterBottom>
             {description}
           </Typography>
           <Typography

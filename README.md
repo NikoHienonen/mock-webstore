@@ -1,7 +1,7 @@
 # Mock webstore
 
 A mock webstore to display my style of code.
-Hours used: 2.5h
+Hours used: 3.5h
 
 ## Run Locally
 
