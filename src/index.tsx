@@ -6,9 +6,9 @@ import reportWebVitals from "./reportWebVitals";
 import Landing from "./views/Landing";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import Header from "./components/Header/Header";
 
 import ProductsView from "./views/Products";
+import App from "./components/App/App";
 
 const router = createBrowserRouter([
   { path: "/products", element: <ProductsView /> },
@@ -18,15 +18,13 @@ const router = createBrowserRouter([
   },
 ]);
 
-const isLanding = window.location.pathname === "/";
-
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      {!isLanding && <Header />}
+      <App />
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>

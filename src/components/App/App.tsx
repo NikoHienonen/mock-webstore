@@ -1,5 +1,9 @@
+import Header from "../Header/Header";
+
 function App() {
-  return <div className="App">moro</div>;
+  console.log("mo");
+  const isLanding = window.location.pathname === "/";
+  return <div className="App">{!isLanding && <Header />}</div>;
 }
 
 export default App;

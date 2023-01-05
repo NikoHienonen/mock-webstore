@@ -1,14 +1,30 @@
-import { Button, Container, Grid, Typography } from "@mui/material";
-import Header from "../components/Header/Header";
+import { Button, Grid, Typography } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { StoreTitle } from "../components/Header/Header";
 
 const Landing = () => {
+  const navigate = useNavigate();
   return (
-    <Grid container sx={{ height: "100vh" }}>
-      <Header />
-      <Typography variant="h5" align="center" sx={{}}>
+    <Grid
+      container
+      sx={{
+        height: "100vh",
+        flexDirection: "column",
+        textAlign: "center",
+        justifyContent: "center",
+      }}
+    >
+      <StoreTitle />
+      <Typography variant="h5" align="center" sx={{ marginTop: 2 }}>
         We have fake products!
       </Typography>
-      <Button>Check them out!</Button>
+      <Button
+        variant="outlined"
+        sx={{ width: "fit-content", alignSelf: "center", marginTop: 5 }}
+        onClick={() => navigate("/products")}
+      >
+        Check them out!
+      </Button>
     </Grid>
   );
 };

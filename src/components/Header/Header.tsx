@@ -1,14 +1,18 @@
 import { Container, Typography } from "@mui/material";
 
+export const StoreTitle = () => (
+  <Typography
+    variant="h3"
+    style={{ textTransform: "uppercase", fontWeight: "lighter" }}
+  >
+    A mock webstore for fake products
+  </Typography>
+);
+
 const Header = () => {
   return (
     <Container>
-      <Typography
-        variant="h3"
-        style={{ textTransform: "uppercase", fontWeight: "lighter" }}
-      >
-        A mock webstore for fake products
-      </Typography>
+      <StoreTitle />
       <Typography variant="subtitle1">We have cake!</Typography>
     </Container>
   );
