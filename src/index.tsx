@@ -8,10 +8,18 @@ import { Provider } from "react-redux";
 import { store } from "./store";
 
 import ProductsView from "./views/Products";
-import App from "./components/App/App";
+import MainLayout from "./Layouts/MainLayout";
 
 const router = createBrowserRouter([
-  { path: "/products", element: <ProductsView /> },
+  {
+    element: <MainLayout />,
+    children: [
+      {
+        path: "/products",
+        element: <ProductsView />,
+      },
+    ],
+  },
   {
     path: "/",
     element: <Landing />,
@@ -24,7 +32,6 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
       <RouterProvider router={router} />
     </Provider>
   </React.StrictMode>

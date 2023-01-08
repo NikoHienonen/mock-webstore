@@ -3,7 +3,10 @@ import { Container, Typography } from "@mui/material";
 export const StoreTitle = () => (
   <Typography
     variant="h3"
-    style={{ textTransform: "uppercase", fontWeight: "lighter" }}
+    style={{
+      textTransform: "uppercase",
+      fontWeight: "lighter",
+    }}
   >
     A mock webstore for fake products
   </Typography>
@@ -11,7 +14,7 @@ export const StoreTitle = () => (
 
 const Header = () => {
   return (
-    <Container>
+    <Container sx={{ margin: "10px 0" }}>
       <StoreTitle />
       <Typography variant="subtitle1">We have cake!</Typography>
     </Container>
