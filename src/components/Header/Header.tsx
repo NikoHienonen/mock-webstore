@@ -16,7 +16,6 @@ const Header = () => {
   return (
     <Container sx={{ margin: "10px 0" }}>
       <StoreTitle />
-      <Typography variant="subtitle1">We have cake!</Typography>
     </Container>
   );
 };

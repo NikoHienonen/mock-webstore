@@ -10,7 +10,7 @@ const ProductsView = () => {
       <Typography sx={{ textAlign: "center", marginBottom: 2 }} variant="h5">
         Check out our latest fake products!
       </Typography>
-      {isLoading ? <CircularProgress /> : <Products products={data} />}
+      {isLoading ? <CircularProgress /> : <Products products={data ?? []} />}
     </Container>
   );
 };
